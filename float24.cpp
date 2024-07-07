@@ -113,7 +113,7 @@ public:
         std::cout << std::endl; // 打印完所有字节后换行
     }
 
-    static void stringToFloat24(std::string& s, uint8_t bytes[3], int expBits, int mantissaBits, int bias) {
+    static void stringToFloat24(std::string s, uint8_t bytes[3], int expBits, int mantissaBits, int bias) {
 
         // not a number
         if (!isDecimalFloat(s)) {
@@ -510,8 +510,8 @@ public:
 };
 
 int main() {
-    string s1 = "3.14";
-    string s2 = "1";
+    string s1 = "3.1415926";
+    string s2 = "-1.4";
     Float24 f1 = s1;
     Float24 f2 = s2;
     cout << s1 + "转换为float24: \t", f1.printBytes();
